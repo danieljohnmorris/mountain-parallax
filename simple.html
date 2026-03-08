@@ -29,9 +29,25 @@
     }
     .section-text.visible { opacity: 1; }
     .section-text.fade { opacity: 0.3; }
+    .switcher {
+      position: fixed; top: 1rem; right: 1rem; z-index: 10;
+      display: flex; gap: 0; border-radius: 4px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.75rem; letter-spacing: 0.05em;
+    }
+    .switcher a {
+      padding: 0.4rem 0.7rem; text-decoration: none; color: rgba(255,255,255,0.5);
+      transition: background 0.2s, color 0.2s;
+    }
+    .switcher a:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
+    .switcher a.active { color: #fff; background: rgba(255,255,255,0.12); }
   </style>
 </head>
 <body>
+  <div class="switcher">
+    <a href="/v1.html" class="active">v1</a>
+    <a href="/v2.html">v2</a>
+  </div>
   <canvas id="scene"></canvas>
   <div class="scroll-container">
     <div class="section"><span class="section-text" data-at="0">Above the clouds</span></div>
