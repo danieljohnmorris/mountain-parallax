@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mountain Valley</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+    h1 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .versions {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: #e0e0e0;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 2rem 3rem;
+      transition: border-color 0.3s, background 0.3s;
+      text-align: center;
+      min-width: 200px;
+    }
+    a.card:hover {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.03);
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #889;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mountain Valley</h1>
+  <div class="versions">
+    <a href="/v1.html" class="card">
+      <div class="card-title">v1</div>
+      <div class="card-desc">Terrain + fog</div>
+    </a>
+    <a href="/v2.html" class="card">
+      <div class="card-title">v2</div>
+      <div class="card-desc">Sky, trees, water, shadows, post-processing</div>
+    </a>
+  </div>
+</body>
+</html>
