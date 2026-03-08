@@ -229,8 +229,8 @@
           show = seg < 0.6;
           fade = seg >= 0.6 && seg < 1.0;
         } else if (at === maxSeg) {
-          show = seg > maxSeg - 0.6;
-          fade = seg > maxSeg - 1.0 && seg <= maxSeg - 0.6;
+          show = scrollProgress > 0.75;
+          fade = scrollProgress > 0.6 && scrollProgress <= 0.75;
         } else {
           const dist = Math.abs(seg - at);
           show = dist < 0.5;

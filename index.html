@@ -473,9 +473,9 @@
           show = seg < 0.6;
           fade = seg >= 0.6 && seg < 1.0;
         } else if (at === maxSeg) {
-          // Last text: visible once camera arrives, stays on
-          show = seg > maxSeg - 0.6;
-          fade = seg > maxSeg - 1.0 && seg <= maxSeg - 0.6;
+          // Last text: visible once camera is near the end, stays on forever
+          show = scrollProgress > 0.75;
+          fade = scrollProgress > 0.6 && scrollProgress <= 0.75;
         } else {
           // Middle text: wider window
           const dist = Math.abs(seg - at);
