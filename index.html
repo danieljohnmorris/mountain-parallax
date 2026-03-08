@@ -462,13 +462,28 @@
 
     // --- Text visibility ---
     const texts = document.querySelectorAll('.section-text');
+    const maxSeg = cameraStops.length - 1;
     function updateTexts() {
+      const seg = scrollProgress * maxSeg;
       texts.forEach(el => {
         const at = parseFloat(el.dataset.at);
-        const segProgress = scrollProgress * (cameraStops.length - 1);
-        const dist = Math.abs(segProgress - at);
-        el.classList.toggle('visible', dist < 0.3);
-        el.classList.toggle('fade', dist >= 0.3 && dist < 0.6);
+        let show, fade;
+        if (at === 0) {
+          // First text: visible until camera moves past it
+          show = seg < 0.6;
+          fade = seg >= 0.6 && seg < 1.0;
+        } else if (at === maxSeg) {
+          // Last text: visible once camera arrives, stays on
+          show = seg > maxSeg - 0.6;
+          fade = seg > maxSeg - 1.0 && seg <= maxSeg - 0.6;
+        } else {
+          // Middle text: wider window
+          const dist = Math.abs(seg - at);
+          show = dist < 0.5;
+          fade = dist >= 0.5 && dist < 0.9;
+        }
+        el.classList.toggle('visible', show);
+        el.classList.toggle('fade', fade);
       });
     }
 
