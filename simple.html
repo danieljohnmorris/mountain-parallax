@@ -30,17 +30,18 @@
     .section-text.visible { opacity: 1; }
     .section-text.fade { opacity: 0.3; }
     .switcher {
-      position: fixed; top: 1rem; right: 1rem; z-index: 10;
-      display: flex; gap: 0; border-radius: 4px; overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.15);
-      font-size: 0.75rem; letter-spacing: 0.05em;
+      position: fixed; top: 1.2rem; right: 1.2rem; z-index: 10;
+      display: flex; gap: 0; border-radius: 6px; overflow: hidden;
+      background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.9rem; letter-spacing: 0.06em;
     }
     .switcher a {
-      padding: 0.4rem 0.7rem; text-decoration: none; color: rgba(255,255,255,0.5);
-      transition: background 0.2s, color 0.2s;
+      padding: 0.5rem 1rem; text-decoration: none; color: rgba(255,255,255,0.5);
+      transition: background 0.2s, color 0.2s; font-weight: 500;
     }
-    .switcher a:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
-    .switcher a.active { color: #fff; background: rgba(255,255,255,0.12); }
+    .switcher a:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); }
+    .switcher a.active { color: #fff; background: rgba(255,255,255,0.18); }
   </style>
 </head>
 <body>
@@ -52,7 +53,10 @@
   <div class="scroll-container">
     <div class="section"><span class="section-text" data-at="0">Above the clouds</span></div>
     <div class="section"></div>
+    <div class="section"></div>
     <div class="section"><span class="section-text" data-at="2">Through the mist</span></div>
+    <div class="section"></div>
+    <div class="section"></div>
     <div class="section"></div>
     <div class="section"><span class="section-text" data-at="4">Into the valley</span></div>
     <div class="section"></div>
